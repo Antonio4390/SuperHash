@@ -18,7 +18,7 @@ def SuperPasswordVerify(password,hash):
         return False
 try:
     if arg[1] == 'SuperHash':
-        print(SuperHash(arg[2]))
+        print(SuperHash(arg[2],arg[3]))
     if arg[1] == 'SuperPasswordVerify':
         print(SuperPasswordVerify(arg[2],arg[3]))
 except:

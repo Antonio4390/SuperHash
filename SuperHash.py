@@ -2,14 +2,14 @@ import hashlib
 import sys
 from encode import *
 arg = sys.argv
-def SuperHash(string):
+def SuperHash(string,key=7):
     string = bytes(string, "utf-8")
     primo = hashlib.md5(string).hexdigest()
     secondo = hashlib.sha256(string=bytes(primo, 'utf-8')).hexdigest()
     terzo = hashlib.sha224(string=bytes(secondo, 'utf-8')).hexdigest()
     quarto = hashlib.sha512(string=bytes(terzo, 'utf-8')).hexdigest()
     quinto = hashlib.sha384(string=bytes(quarto, 'utf-8')).hexdigest()
-    tot = encode(quinto,6)
+    tot = encode(quinto,key)
     return tot
 def SuperPasswordVerify(password,hash):
     if SuperHash(password) == hash:

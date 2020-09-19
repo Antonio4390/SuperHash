@@ -11,8 +11,8 @@ def SuperHash(string,key=7):
     quinto = hashlib.sha384(string=bytes(quarto, 'utf-8')).hexdigest()
     tot = encode(quinto,key)
     return tot
-def SuperPasswordVerify(password,hash):
-    if SuperHash(password) == hash:
+def SuperPasswordVerify(password,hash,key=7):
+    if SuperHash(password,key) == hash:
         return True
     else:
         return False
